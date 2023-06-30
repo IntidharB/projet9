@@ -1,0 +1,585 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+//la variable pour la vitesse de rotation 
+// $vitesse:10s;
+:root{
+  --vitesse : 10s;
+}
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes floating {
+  // 0% {
+  //   transform: translateX(0);
+  // }
+  50% {
+    transform: translateX(-15px);
+  }
+  // 100% {
+  //   transform: translateX(0);
+  // }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/****************CSS header**************************/
+ 
+.main-navigation {
+  height: 50px;
+  max-width: 1440px;
+  width: 100%;
+  ul {
+    display: none;
+  }
+  position: relative; /* Ajout de la position relative par défaut */
+  &.menu-active {
+    position: fixed; /* Ajout de la position fixe lorsque le menu est ouvert */
+  }
+
+  // le titre de la nav
+  .site-title1 {
+    // z-index: -1;
+    padding: 0px !important;
+    position: absolute;
+    width: 95%;
+    display: flex;
+    justify-content: center; /* Aligement horizontal */
+    align-items: center;
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.4799px;
+    line-height: 27px;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    color: #000000;
+    top: 10px;
+    &:hover {
+      color: #000000;
+      text-shadow: 0px 0px 14px #ff5c00;
+    }
+  }
+  // .menu-toggle {
+  //   position: relative;
+  //   background-color: transparent;
+  //   border: none;
+  //   padding: 0;
+  //   width: 35px;
+  //   height: 35px;
+  //   cursor: pointer;
+
+  //   .line {
+  //     display: block;
+  //     width: 100%;
+  //     height: 3px;
+  //     margin-bottom: 5px;
+  //     background-color: #000;
+  //     transform-origin: center;
+  //     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  //   }
+  //   .l1 {
+  //     opacity: 1;
+  //   }
+  // }
+
+  .menu-toggle {
+    margin-left: 95%;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+
+    .line {
+      display: block;
+      width: 35px;
+      height: 3px;
+      margin-bottom: 5px;
+      background-color: #000;
+      transform-origin: center;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    &.menu-active {
+      .l1 {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .l2 {
+        opacity: 0;
+      }
+
+      .l3 {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  .menu {
+    overflow: hidden;
+    position: fixed;
+    display: none;
+    padding: 20px;
+    background-color: #fff5e9;
+    width: 100%;
+    max-width: 1440px;
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      margin-bottom: 57px;
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 84px;
+      text-align: center;
+      color: #000000;
+
+      &:hover {
+        text-shadow: 0px 0px 14px #ff5c00;
+      }
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+    }
+  }
+}
+
+//la grand fleur violette
+.menu_logo::after {
+  position: absolute;
+  left: -6em;
+  bottom: -5.3em;
+  animation: rotate 8s infinite linear;
+  content: url("./assets/images/header/Orch.png");
+}
+//le chat violet
+.menu_title1::after {
+  position: absolute;
+  left: 19em;
+  bottom: 0em;
+  animation: floating 5s infinite;
+  transform: rotate(-17.86deg);
+  content: url("./assets/images/header/cat1.png");
+}
+// la fleur blanche
+.menu_title1::before {
+  position: absolute;
+  right: 10em;
+  bottom: 0em;
+  animation: rotate 8s infinite linear;
+  content: url("./assets/images/header/Sunflower.png");
+}
+//La petite fleur violette
+.menu_title2::after {
+  position: absolute;
+  right: -3em;
+  bottom: -2.5em;
+  animation: rotate 8s infinite linear;
+  content: url("./assets/images/header/Random-Flower.png");
+}
+//le chat noir
+.menu_title3::before {
+  position: absolute;
+  right: 10em;
+  bottom: -3em;
+  animation: floating 5s infinite;
+  content: url("./assets/images/header/cat2.png");
+}
+//la fleur orange
+.menu_title3::after {
+  position: absolute;
+  left: 10em;
+  bottom: 0em;
+  animation: rotate 8s infinite linear;
+  content: url("./assets/images/header/Flower.png");
+}
+//lechat orange
+.menu_title4::after {
+  position: absolute;
+  left: 2em;
+  bottom: -10em;
+  animation: floating 5s infinite;
+  transform: rotate(-0.51deg);
+  content: url("./assets/images/header/cat3.png");
+}
+//la fleur orange
+.menu_title4::before {
+  position: absolute;
+  right: -24em;
+  bottom: -35em;
+  animation: rotate 8s infinite linear;
+  content: url("./assets/images/header/Hibiscus-footer.png");
+}
+
+/****************CSS MAIN**************************/
+//la bannier
+.banner {
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: fadeIn 1s 1s ease both;
+  position: relative;
+  img {
+    transform: translateY(100px);
+    opacity: 0;
+    animation: fadeIn 1s 1s ease both, floating 5s infinite;
+  }
+  video {
+    position: absolute;
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: fadeIn 1s 1s ease both;
+    width: 100%;
+    height: auto;
+  }
+}
+//les fleurs en rotation
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after {
+  animation: rotate var(--vitesse) infinite linear;
+}
+//régler le probleme de la fleurs blache
+.story h2::after {
+  transform-origin: 77px 77px;
+}
+
+//les H2 et le H3 avec la bcg purple
+.animation_title {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  transition: top 3s,
+  opacity 0.5s;
+}
+.animation_title.animated {
+  top: 0;
+  opacity: 1;
+}
+
+//Slide personnages
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+//les nuages
+@keyframes cloud {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/nuages/Studio_Koukaki-image_place.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  position: relative;
+
+  .big_cloud {
+    position: absolute;
+    right: 7em;
+    top: 6em;
+    filter: blur(15px);
+  }
+
+  .little_cloud {
+    position: absolute;
+    right: 36em;
+    top: 19em;
+    filter: blur(15px);
+  }
+}
+
+.translatecloud {
+  animation: cloud 3s ease-in-out;
+}
+
+/****************CSS footer**************************/
+//footer la section oscar
+#colophon {
+  padding-top: 10em;
+  display: block;
+  #oscar {
+    display: flex;
+    margin-bottom: 126px;
+    .oscar_container {
+      position: relative;
+      height: 200px;
+      margin: -40px 0px 165px 100px;
+
+      h3 {
+        transform: translateY(100px);
+        opacity: 0;
+        animation: fadeIn 1s 1s ease both;
+        position: absolute;
+        padding: 50px 3px 0px 70px;
+        width: 715px;
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 52px;
+        letter-spacing: -0.02em;
+        color: #fff5e9;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-align: inherit;
+      }
+
+      .oscar_logo {
+        width: 278px;
+        height: 129px;
+      }
+    }
+  }
+}
+
+/* Styles pour les appareils mobiles */
+
+@media (max-width: 767px) {
+  /*css header*/
+  .main-navigation {
+    width: 100%;
+    .menu-toggle {
+      margin-left: 85%;
+    }
+    .site-title1 {
+      width: 75%;
+      font-size: 17px !important;
+    }
+    .menu {
+      a {
+        margin-bottom: 0px;
+        font-size: 30px;
+      }
+    }
+    .menu_logo::after,
+    .menu_title1::after,
+    .menu_title1::before,
+    .menu_title2::after,
+    .menu_title3::before,
+    .menu_title3::after,
+    .menu_title4::after,
+    .menu_title4::before {
+      display: none;
+    }
+  }
+  /*Css main*/
+  //la banner
+  .banner {
+    min-height: 200px;
+    video {
+      display: none;
+    }
+  }
+  //les H2 et le H3 avec la bcg purple
+  .animation_title {
+    font-size: 25px;
+    top: 70px;
+    // margin-top: 20px;
+  }
+
+  #characters {
+    margin: 0px !important;
+    h3 {
+      padding: 45px;
+      font-size: 21px;
+    }
+  }
+  #place {
+    h3{
+    font-size: 21px;
+  
+}
+}
+  //slide personnages
+  #slide {
+    width: 100%;
+    .swiper {
+      padding: 0px;
+    }
+  }
+  //les nuages
+  .big_cloud,
+  .little_cloud {
+    display: none;
+  }
+
+  /*css footer*/
+  #colophon {
+    padding-top: 2em;
+    #oscar {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 126px;
+      .oscar_container {
+        /* position: relative; */
+        height: 140px;
+        margin: 0px !important;
+        h3 {
+          // top: -4.5em;
+          left: 2em;
+          width: 100%;
+          padding: 20px 4px 4px 4px;
+          transform: translateY(100px);
+          animation: fadeIn 1s 1s ease both;
+          opacity: 0;
+          // animation: none !important;
+          position: absolute;
+          width: 75%;
+          font-size: 17px;
+          line-height: 30px;
+          letter-spacing: -0.02em;
+        }
+      }
+      .oscar_logo {
+        width: 60%;
+        margin: 25px 75px -60px 75px;
+      }
+    }
+  }
+  .site-footer {
+    ul::after {
+      display: none;
+    }
+    ul li a {
+      font-size: 10px;
+    }
+  }
+
+  .site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after{display: none;}
+}
+
+/* Styles pour les tablettes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /*css header*/
+  .main-navigation {
+    width: 100%;
+    .menu-toggle {
+      margin-left: 85%;
+    }
+    .site-title1 {
+      width: 75%;
+      font-size: 25px;
+    }
+    .menu {
+      a {
+        margin-bottom: 0px;
+        font-size: 30px;
+      }
+    }
+    .menu_title1::before {
+      right: 4em;
+    }
+    .menu_title1::after {
+      left: 10em;
+    }
+    .menu_title4::before {
+      bottom: -40em;
+    }
+  }
+  /*Css main*/
+  //la banner
+  .banner {
+    min-height: 400px;
+    video {
+      display: none;
+    }
+  }
+  //les H2 et le H3 avec la bcg purple
+  .animation_title {
+    font-size: 40px;
+    top: 70px;
+    // margin-top: 20px;
+  }
+
+  #characters {
+    margin: 0px !important;
+    h3 {
+      padding: 45px;
+      font-size: 35px;
+    }
+  }
+  //slide personnages
+  #slide {
+    width: 100%;
+    .swiper {
+      padding: 0px;
+    }
+  }
+  //les nuages
+  .big_cloud,
+  .little_cloud {
+    display: none;
+  }
+
+  /*css footer*/
+  #colophon {
+    #oscar {
+      margin-bottom: 0px;
+      .oscar_container {
+        h3 {
+          padding: 45px 3px 0px 60px;
+          width: 450px;
+          font-size: 20px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+  .site-footer {
+    ul li a {
+      font-size: 10px;
+    }
+  }
+
+  .site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after{display: none;}
+
+}
+/*# sourceMappingURL=style.css.map */
